@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สมัครเรียนออนไลน์ - มจพ.</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<!------- header / navbar ------->
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <img src="images/Logo_KMUTNB.png" alt="Logo KMUTNB" class="nav-logo">
+            <span>มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ</span>
+        </div>
+            <nav class="menu">
+                <a href="index.html">หน้าแรก</a>
+                <a href="register.html">สมัครเรียน</a>
+                <a href="status.html">ตรวจสอบสถานะ</a>
+                <a href="#">ติดต่อเรา</a> 
+            </nav>
+    </header>
+
+    <!-------- main content --------->
+
+    <main class="container">
+        <!-------- Header ของฟอร์ม-->
+        <section class="form-header">
+            <h1 class="page-title">แบบฟอร์มสมัครเรียนออนไลน์</h1>
+            <p class="page-subtitle">กรุณากรอกข้อมูลให้ครบถ้วนและถูกต้องตามความเป็นจริง</p>
+        </section>
+
+        <!-------- Form --------->
+        
+        <div class="form-wrapper">
+            <form action="status.html" method="POST">
+
+        <!-------- Section 1: ข้อมูลส่วนตัว -------->
+
+                <div class="form-section">
+                    <h2 class="form-section-title">1. ข้อมูลส่วนตัว (Personal Information)</h2>
+                    <div class="form-row col-2">
+                        <div class="form-group">
+                            <label for="fullname">ชื่อ-นามสกุล (ภาษาไทย)*</label>
+                            <input type="text" id="fullname" pattern="^[ก-๏\s]+$" placeholder="กรุณากรอกชื่อ-นามสกุล" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nation-id">เลขประจำตัวประชาชน *</label>
+                            <input type="text" id="nation-id" pattern="[0-9]{13}" inputmode="numeric" maxlength="13" placeholder="กรอกรหัสประจำตัวประชาชน 13 หลัก" title="กรุณากรอกเลขบัตรประจำตัวประชาชน 13 หลัก" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row col-3">
+                        <div class="form-group">
+                            <label for="birthdate">วัน/เดือน/ปีเกิด (พ.ศ.)</label>
+                            <input type="text" id="birthdate" name="birthdate" placeholder="วว/ดด/ปปปป" 
+                                pattern="(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/(25[0-9]{2})" 
+                                maxlength="10"
+                                title="กรุณากรอกในรูปแบบ วว/ดด/ปปปป เป็นปี พ.ศ." required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">เบอร์โทรศัพท์มือถือ *</label>
+                            <input type="tel" id="phone" pattern="[0-9]{10}" inputmode="numeric" maxlength="10" placeholder="08XXXXXXXX" title="กรุณากรอกเบอร์โทรศัพท์มือถือ 10 หลัก" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">อีเมล (Email) *</label>
+                            <input type="email" id="email" placeholder="กรุณากรอกอีเมล" required>
+                        </div>
+                    </div>
+
+                     <div class="form-row col-1">
+                        <div class="form-group">
+                            <label for="address">ที่อยู่ปัจจุบัน *</label>
+                            <textarea id="address" placeholder="กรุณากรอกที่อยู่ปัจจุบัน" required></textarea>
+                         </div>
+                    </div>
+                </div>
+
+            <hr class="form-divider">
+
+            <!-------- Section 2: ข้อมูลการศึกษา -------->
+            <div class="form-section">
+            <h2 class="form-section-title">2. ประวัติการศึกษา (Educational Background)</h2>
+            
+            <div class="form-row col-2">
+                <div class="form-group">
+                    <label for="school-name">ชื่อสถานศึกษาเดิม/โรงเรียน</label>
+                    <input type="text" id="school-name" placeholder="ระบุชื่อโรงเรียน หรือ วิทยาลัย" required>
+                </div>
+                <div class="form-group">
+                    <label for="edu-degree">ระดับชั้น/วุฒิการศึกษาที่สำเร็จ</label>
+                    <select id="edu-degree" required>
+                        <option value="">-- เลือกระดับการศึกษา --</option>
+                        <option value="m6">มัธยมศึกษาปีที่ 6 (ม.6)</option>
+                        <option value="vocational">ประกาศนียบัตรวิชาชีพ (ปวช.)</option>
+                        <option value="high-vocational">ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row col-2">
+                <div class="form-group">
+                    <label for="gpax">เกรดเฉลี่ยสะสม (GPAX)</label>
+                    <input type="number" id="gpax" step="0.01" min="0.00" max="4.00" placeholder="เช่น 3.50" required>
+                </div>
+                <div class="form-group">
+                    <label for="graduation-year">ปีที่สำเร็จการศึกษา (พ.ศ.)</label>
+                    <input type="text" id="graduation-year" pattern="[0-9]{4}" maxlength="4" placeholder="เช่น 2567" required>
+                </div>
+            </div>
+        </div>
+
+        <hr class="form-divider">
+
+            <!-------- Section 3: เลือกหลักสูตรที่ต้องการสมัคร -------->
+            <div class="form-section">
+                <h2 class="form-section-title">3. เลือกหลักสูตรที่ต้องการสมัคร (Select Program)</h2>
+
+                <div class="form-row col-3">
+                    <div class="form-group">
+                        <label for="faculty">คณะที่ต้องการสมัคร (Faculty)</label>
+                        <select id="faculty" required>
+                            <option value="">-- เลือกคณะ --</option>
+                            <option value="fitm">คณะเทคโนโลยีและการจัดการอุตสาหกรรม (FITM)</option>
+                            <option value="bas">คณะบริหารธุรกิจและอุตสาหกรรมบริการ (BAS)</option>
+                            <option value="ai">คณะอุตสาหกรรมเกษตรดิจิทัล (AI)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="major">สาขาที่ต้องการสมัคร (Major)</label>
+                        <select id="major" required>
+                            <option value="">-- เลือกสาขา --</option>
+                            <option value="it">สาขาวิชาเทคโนโลยีสารสนเทศ (IT)/(INET)</option>
+                            <option value="mm">สาขาวิชาเทคโนโลยีเครื่องกลและกระบวนการผลิต (MM)/(MMT)</option>
+                            <option value="iem">สาขาวิชาการจัดการอุตสาหกรรม (IEM)/(IMT)</option>
+                            <option value="ca">สาขาวิชาคอมพิวเตอร์ช่วยออกแบบและบริหารงานก่อสร้าง (CA/CDM)</option>
+                            <option value="IBT">สาขาวิชาบริหารธุรกิจอุตสาหกรรมและการค้า (IBT/IBTT)</option>
+                            <option value="afe">สาขาวิชาวิศวกรรมเกษตรและอาหาร (AFE/AFET)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="admission-round">รอบการรับสมัคร (Admission Round)</label>
+                        <select id="admission-round" required>
+                            <option value="">-- เลือกรอบการรับสมัคร --</option>
+                            <option value="portfolio">รอบที่ 1 Portfolio</option>
+                            <option value="quota">รอบที่ 2 โควตา</option>
+                            <option value="admissions">รอบที่ 3 Admissions</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="form-divider">
+
+            <!-------- Section 4: อัปโหลดเอกสาร -------->
+            <div class="form-section">
+                <h2 class="form-section-title">4. อัปโหลดเอกสาร (upload documents)</h2>
+                <p class="form-section-subtitle">อัปโหลดเอกสารใบแสดงผลการเรียน (ปพ.1) และ เอกสารอื่นๆ (รวมเป็นไฟล์ PDF หนึ่งไฟล์)</p>
+
+                <div class="file-upload-box">
+                    <label for="file-upload" class="file-upload-label">เลือกไฟล์</label>
+                    <span class="file-name">ยังไม่ได้เลือกไฟล์</span>
+                    <input type="file" id="file-upload" accept=".pdf" required>
+                </div>
+            </div>
+
+            <!-------- Section 5: ยืนยันข้อมูล -------->
+
+            <div class="form-section">
+            <h2 class="form-section-title">5. ยืนยันข้อมูล (Confirmation)</h2>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="confirm-check" required>
+                <label for="confirm-check">
+                    ข้าพเจ้าขอรับรองว่าข้อความและเอกสารหลักฐานข้างต้นถูกต้องตามความเป็นจริงทุกประการ หากตรวจสอบพบภายหลังว่าไม่เป็นความจริง ข้าพเจ้ายินยอมให้ยกเลิกการสมัครทันที
+                </label>
+            </div>
+        </div>
+        
+            <!-------- ปุ่มส่งใบสมัคร -------->
+            <div class="form-submit-container">
+                <button type="submit" class="form-submit-btn">ส่งใบสมัคร</button>
+                <button type="reset" class="form-reset-btn">ล้างข้อมูล</button>
+            </div>
+            </form>
+        </div>
+    </main>
+
+    <!---------- footer ----------->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="images/Logo_KMUTNB.png" alt="Logo KMUTNB" class="footer-logo">
+                <h2>มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ</h2>
+            </div>
+
+            <div class="contact">
+                <h1>ติดต่อเรา</h1>
+                <p>
+                    กลุ่มงานรับเข้าศึกษา กองบริการการศึกษา
+                    สำนักงานอธิการบดี ชั้น 2 อาคาร TGGS
+                    มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ 1518
+                    ถนนประชาราษฎร์ 1 แขวงวงศ์สว่าง
+                    เขตบางซื่อ กรุงเทพฯ 10800
+                </p>
+
+                <div class="contact-item">
+                    <img src="images/tel.png" alt="tel">
+                    <div>
+                        <h4>เบอร์โทรสมัครส่วนงานรับสมัคร</h4>
+                        <p>+66 2 555-2000 ต่อ 1626,1627</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <img src="images/email.png" alt="email">
+                    <div>
+                        <h4>อีเมลติดต่ออย่างเป็นทางการ</h4>
+                        <p>admissions@kmutnb.ac.th</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+   
+</body>
+</html>
